@@ -1,0 +1,52 @@
+.compact_table_element {
+  display: block;
+  background-color: #eee;
+  margin: 1em 0 1em 0;
+  padding: 0.5em 1em 0.5em 1em;
+  border: 1px outset white;
+}
+
+.compact_table_element span{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.compact_table_details_link {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-right: 1em;
+  float: left;
+}
+
+.compact_table_left {
+  float:left;
+}
+
+.compact_table_right {
+  float:right;  
+}
+
+.compact_table_hidden {
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+  clear: both;
+}
+
+.compact_table_hidden table {
+  width: 100%;
+
+}
+
+.compact_table_hidden tr{
+  font-size: smaller;
+  background-color: #eee;
+}
+
+.compact_table_hidden th {
+  padding: 0.2em;
+}
+
+.compact_table_hidden td {
+  padding: 0.2em;
+}

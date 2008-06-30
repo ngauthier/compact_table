@@ -1,0 +1,43 @@
+CompactTable
+============
+
+CompactTable was created to solve the problem of displaying the index page for a complicated
+object with many fields. Often, these fields run over the width of the page. CompactTable allows
+the user to specify two classes of html code. The first, to be shown by default, and the second
+which only displays when the user clicks a link.
+
+When you install this plugin, make sure to copy the css and js files to the public/stylesheets and
+public/javascripts folders.
+
+
+Example
+=======
+
+Lets say we have a model, People, and this is app/views/people/index.html.erb.
+
+<% compact_table({:collection => @people, :identifier => 'people_', :lambda_toggle_link => lambda { |person| -%>
+  <%= h person.name %>
+  <% }, :lambda_displayed => lambda { |person| -%>
+  <span class="compact_table_left">
+    <%= h person.age %>
+  </span>
+  <span class="compact_table_right">
+    <%= h person.alive? %>
+  </span>
+<% } , :lambda_hidden => lambda { |exercise| -%>
+  <h3>About me</h3>
+  <%= person.about %>
+<% }}) -%>
+
+The first lambda (lambda_toggle_link) defines what the text for the link that opens and closes the
+table will be.
+
+The second lambda (lambda_displayed) shows the displayed information. The CSS classes for left and
+right just define float status for you so that some text is aligned on the left and some on the
+right.
+
+The third lambda (lambda_hidden) is the data that will be hidden until the user clicks
+lambda_toggle_link.
+
+
+Copyright (c) 2008 Nick Gauthier (nick@smartlogicsolutions.com), released under the MIT license
